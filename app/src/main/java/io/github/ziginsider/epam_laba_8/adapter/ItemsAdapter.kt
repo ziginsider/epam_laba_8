@@ -28,16 +28,18 @@ class ItemsAdapter(val items: List<Character>,
         return viewHolder
     }
 
+    override fun getItemCount() = items.size
+
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val item = items[position]
         holder.itemView.bind(item)
     }
 
-    protected open fun onItemClick(itemView: View, position: Int) {
+    private fun onItemClick(itemView: View, position: Int) {
         items[position].itemClick()
     }
 
-    fun View.bind(item: Character) {
+    private fun View.bind(item: Character) {
         heroName.text = item.name
         when(item.id) {
             0 -> heroImage.setImageResource(R.drawable.yoda)
@@ -50,6 +52,4 @@ class ItemsAdapter(val items: List<Character>,
             7 -> heroImage.setImageResource(R.drawable.c_3po)
         }
     }
-
-    override fun getItemCount() = items.size
 }
