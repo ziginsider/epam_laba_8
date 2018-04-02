@@ -14,7 +14,7 @@ abstract class BaseFragment : Fragment() {
     protected abstract fun getLayout(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        
+
         super.onCreate(savedInstanceState)
     }
 
