@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import io.github.ziginsider.epam_laba_8.utils.logd
 
 abstract class BaseFragment : Fragment() {
 
@@ -14,7 +15,7 @@ abstract class BaseFragment : Fragment() {
     protected abstract fun getLayout(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        logd("dd")
         super.onCreate(savedInstanceState)
     }
 
