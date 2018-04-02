@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val characters = MockCharacter.generateStarWarsCharacters()
+        val characters = MockCharacter(resources).generateStarWarsCharacters()
     }
 }
