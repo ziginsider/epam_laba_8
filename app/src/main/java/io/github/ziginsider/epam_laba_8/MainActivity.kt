@@ -3,8 +3,9 @@ package io.github.ziginsider.epam_laba_8
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import io.github.ziginsider.epam_laba_8.model.Character
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,6 +17,11 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.activity_layout, fragment)
+                .addToBackStack(null)
                 .commit()
+    }
+
+    override fun onFragmentItemClick(item: Character) {
+        setFragment(CharacterFragment.newInstance(item.id, item.description))
     }
 }

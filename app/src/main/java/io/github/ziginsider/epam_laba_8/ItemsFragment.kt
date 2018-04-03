@@ -17,9 +17,13 @@ class ItemsFragment : BaseFragment() {
 
     private var listener: ItemClickEventListener? = null
 
+    private var recyclerAdapter: ItemsAdapter? = null
+
     override val logTag = ItemsFragment::class.java.simpleName
 
-    private var recyclerAdapter: ItemsAdapter? = null
+    override fun getLayout(): Int {
+        return R.layout.fragment_items
+    }
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -35,10 +39,6 @@ class ItemsFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         val characters = MockCharacter(resources).generateStarWarsCharacters()
         setUpRecyclerView(characters)
-    }
-
-    override fun getLayout(): Int {
-        return R.layout.fragment_items
     }
 
     private fun setUpRecyclerView(items: List<Character>) {
