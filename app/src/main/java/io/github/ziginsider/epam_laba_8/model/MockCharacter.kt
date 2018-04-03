@@ -3,7 +3,6 @@ package io.github.ziginsider.epam_laba_8.model
 import android.content.res.Resources
 import io.github.ziginsider.epam_laba_8.R
 
-
 class MockCharacter(val res: Resources) {
     fun generateStarWarsCharacters(): List<Character> {
         val characters = ArrayList<Character>()
