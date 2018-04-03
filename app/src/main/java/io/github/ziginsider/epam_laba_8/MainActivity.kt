@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
         currentDecription = savedInstanceState?.getString(CURRENT_DESCRIPTION_KEY)
                 ?: resources.getString(R.string.yoda_description)
 
+        clearFragmentBackStack()
         if (isPortrait()) {
             setItemsFragmentPortrait(ItemsFragment())
         } else {
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
             setCharacterFragmentLandscape(CharacterFragment
                     .newInstance(currentItemId, currentDecription))
         }
+    }
+
+    private fun clearFragmentBackStack() {
+        supportFragmentManager.popBackStack()
     }
 
     private fun setItemsFragmentPortrait(fragment: Fragment) {
@@ -47,6 +52,11 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     private fun setCharacterFragmentPortrait(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.current_from_right_to_left,
+                        R.anim.previous_from_left_to_right,
+                        R.anim.current_from_left_to_right,
+                        R.anim.previous_from_right_to_left)
                 .replace(R.id.activity_layout, fragment)
                 .addToBackStack(null)
                 .commit()
@@ -55,6 +65,9 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     private fun setCharacterFragmentLandscape(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.current_from_bottom_to_top,
+                        R.anim.previous_from_bottom_to_top)
                 .replace(R.id.character_frame, fragment)
                 .commit()
     }
