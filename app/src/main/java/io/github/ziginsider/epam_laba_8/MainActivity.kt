@@ -10,10 +10,17 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setFragment(ItemsFragment())
+        if (savedInstanceState == null) setFragment(ItemsFragment())
     }
 
     private fun setFragment(fragment: Fragment) {
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.activity_layout, fragment)
+                .commit()
+    }
+
+    private fun setFragmentToStack(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.activity_layout, fragment)
@@ -22,6 +29,6 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     }
 
     override fun onFragmentItemClick(item: Character) {
-        setFragment(CharacterFragment.newInstance(item.id, item.description))
+        setFragmentToStack(CharacterFragment.newInstance(item.id, item.description))
     }
 }

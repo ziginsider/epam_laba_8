@@ -60,4 +60,6 @@ class ItemsFragment : BaseFragment() {
         listener = null
         recyclerAdapter = null
     }
+
+
 }
