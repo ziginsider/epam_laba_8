@@ -1,6 +1,7 @@
 package io.github.ziginsider.epam_laba_8.utils
 
 import android.app.Activity
+import android.content.res.Resources
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -23,3 +24,7 @@ fun Activity.toast(message: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
 //inflate view
 infix fun ViewGroup.inflate(layoutResId: Int): View =
         LayoutInflater.from(context).inflate(layoutResId, this, false)
+
+//integer to Dp
+val Int.asDp: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()

@@ -10,7 +10,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setFragment(ItemsFragment())
-
     }
 
     private fun setFragment(fragment: Fragment) {
