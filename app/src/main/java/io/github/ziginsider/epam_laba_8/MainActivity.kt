@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import io.github.ziginsider.epam_laba_8.model.Character
 import io.github.ziginsider.epam_laba_8.utils.isPortrait
+import io.github.ziginsider.epam_laba_8.utils.toast
 
 class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     private val CURRENT_ITEM_ID_KEY = "currentItemIdKey"
@@ -73,6 +74,12 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     }
 
     override fun onFragmentItemClick(item: Character) {
+
+        if (currentItemId == item.id && !isPortrait()) {
+            toast("${item.name} is current character!")
+            return
+        }
+
         currentItemId = item.id
         currentDecription = item.description
 

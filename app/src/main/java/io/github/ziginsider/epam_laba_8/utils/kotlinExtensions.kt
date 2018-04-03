@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import io.github.ziginsider.epam_laba_8.BuildConfig
 
-fun android.support.v4.app.Fragment.logd(className: String, message: String) {
+fun logd(className: String, message: String) {
     if (BuildConfig.DEBUG) Log.d(className, message)
 }
 

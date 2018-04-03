@@ -44,10 +44,7 @@ class ItemsFragment : BaseFragment() {
     private fun setUpRecyclerView(items: List<Character>) {
         recyclerAdapter = ItemsAdapter(items,
                 R.layout.item_view,
-                {
-                    activity.toast("Click $name !")
-                    listener?.onFragmentItemClick(this)
-                })
+                { listener?.onFragmentItemClick(this) })
         with(recyclerView) {
             layoutManager = LinearLayoutManager(activity)
             setHasFixedSize(true)
