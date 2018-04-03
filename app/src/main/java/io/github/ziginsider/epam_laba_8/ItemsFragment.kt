@@ -54,4 +54,10 @@ class ItemsFragment : BaseFragment() {
             adapter = recyclerAdapter
         }
     }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
+        recyclerAdapter = null
+    }
 }
