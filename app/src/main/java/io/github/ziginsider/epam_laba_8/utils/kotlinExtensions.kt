@@ -10,22 +10,38 @@ import android.view.ViewGroup
 import android.widget.Toast
 import io.github.ziginsider.epam_laba_8.BuildConfig
 
+/**
+ * Extension for LogCat
+ */
 fun logd(className: String, message: String) {
     if (BuildConfig.DEBUG) Log.d(className, message)
 }
 
+/**
+ * Extension for Toast.
+ */
 fun Activity.toast(message: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, duration).show()
 }
 
-//inflate view
+/**
+ * Extension for ViewGroup. Inflates view/
+ *
+ * @return Inflated View
+ */
 infix fun ViewGroup.inflate(layoutResId: Int): View =
         LayoutInflater.from(context).inflate(layoutResId, this, false)
 
-//integer to dp
+/**
+ * Extension for Int. Converts <tt>Int</tt> to <tt>dp</dp>
+ */
 val Int.asDp: Int
     get() = (this * Resources.getSystem().displayMetrics.density).toInt()
 
-//portrait and landscape orientation
+/**
+ * Extension for Activity. Gets current device orientation
+ *
+ * @return <tt>true</tt> if device has portrait orientation
+ */
 fun Activity.isPortrait()
         = this.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT

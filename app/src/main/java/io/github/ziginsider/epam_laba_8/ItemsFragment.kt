@@ -6,17 +6,23 @@ import android.support.v7.widget.LinearLayoutManager
 import io.github.ziginsider.epam_laba_8.adapter.ItemsAdapter
 import io.github.ziginsider.epam_laba_8.model.Character
 import io.github.ziginsider.epam_laba_8.model.MockCharacter
-import io.github.ziginsider.epam_laba_8.utils.toast
 import kotlinx.android.synthetic.main.fragment_items.*
 
+/**
+ * Implements First Fragment that contains a list which allows to chose second Fragment
+ *
+ * <p>Declares interface <tt>ItemClickEventListener</tt> for getting
+ * touch to Activity
+ *
+ * @author Alex Kisel
+ * @since 2018-04-03
+ */
 class ItemsFragment : BaseFragment() {
-
     interface ItemClickEventListener {
         fun onFragmentItemClick(item: Character)
     }
 
     private var listener: ItemClickEventListener? = null
-
     private var recyclerAdapter: ItemsAdapter? = null
 
     override val logTag = ItemsFragment::class.java.simpleName

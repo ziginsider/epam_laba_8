@@ -9,11 +9,16 @@ import io.github.ziginsider.epam_laba_8.utils.asDp
 import io.github.ziginsider.epam_laba_8.utils.inflate
 import kotlinx.android.synthetic.main.item_view.view.*
 
+/**
+ * Adapter for list of characters {@link model#Character}
+ *
+ * @author Alex Kisel
+ * @since 2018-04-03
+ */
 class ItemsAdapter(val items: List<Character>,
                    val layoutResId: Int,
                    private var itemClick: Character.() -> Unit = {})
     : RecyclerView.Adapter<ItemsAdapter.Holder>() {
-
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {

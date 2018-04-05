@@ -3,7 +3,20 @@ package io.github.ziginsider.epam_laba_8.model
 import android.content.res.Resources
 import io.github.ziginsider.epam_laba_8.R
 
+/**
+ * Generates list of characters
+ *
+ * @see {@link Character}
+ *
+ * @author Alex Kisel
+ * @since 2018-04-03
+ */
 class MockCharacter(val res: Resources) {
+    /**
+     * Generates list of characters {@link model#Character}
+     *
+     * @return list of characters
+     */
     fun generateStarWarsCharacters(): List<Character> {
         val characters = ArrayList<Character>()
         characters.add(Character(0, res.getString(R.string.yoda_name),

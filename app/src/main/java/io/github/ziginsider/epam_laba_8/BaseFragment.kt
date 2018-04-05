@@ -8,9 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import io.github.ziginsider.epam_laba_8.utils.logd
 
+/**
+ * <tt>Abstract</tt> Base Fragment that contains the base implementation for Fragment
+ *
+ * @author Alex Kisel
+ * @since 2018-04-03
+ */
 abstract class BaseFragment : Fragment() {
 
+    /**
+     * TAG for {@link utils#logd}
+     */
     protected abstract val logTag: String
+
+    /**
+     * Gets resource id of layout for Fragment inflater
+     *
+     * @return Int resource id of layout for Fragment inflater
+     */
     protected abstract fun getLayout(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {

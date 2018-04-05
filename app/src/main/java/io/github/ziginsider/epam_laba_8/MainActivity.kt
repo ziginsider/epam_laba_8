@@ -7,6 +7,17 @@ import io.github.ziginsider.epam_laba_8.model.Character
 import io.github.ziginsider.epam_laba_8.utils.isPortrait
 import io.github.ziginsider.epam_laba_8.utils.toast
 
+/**
+ * Сontains two Fragments that have different positions on the screen in portrait
+ * and landscape modes.
+ *
+ * <p>First Fragment {@link ItemsFragment} contains a list which allows to chose second Fragment
+ * {@link CharacterFragment}. Implements {@link ItemsFragment#ItemClickEventListener} for getting
+ * touch to Fragment. The transition of moving from first Fragment to another is animated
+ *
+ * @author Alex Kisel
+ * @since 2018-04-03
+ */
 class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     private val CURRENT_ITEM_ID_KEY = "currentItemIdKey"
     private val CURRENT_DESCRIPTION_KEY = "currentDescriptionKey"
@@ -74,17 +85,13 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
     }
 
     override fun onFragmentItemClick(item: Character) {
-
         if (currentItemId == item.id && !isPortrait()) {
             toast("${item.name} is current character!")
             return
         }
-
         currentItemId = item.id
         currentDecription = item.description
-
         val fragment = CharacterFragment.newInstance(currentItemId, currentDecription)
-
         if (isPortrait()) setCharacterFragmentPortrait(fragment)
         else setCharacterFragmentLandscape(fragment)
     }
