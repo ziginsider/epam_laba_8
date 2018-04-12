@@ -12,13 +12,13 @@ import android.widget.TextView
  * @since 2018-04-03
  */
 class CharacterFragment : BaseFragment() {
+    override val logTag = CharacterFragment::class.java.simpleName
+
     private val ITEM_ID_KEY = "itemIdKey"
     private val ITEM_DECRIPTION_KEY = "itemDescriptionKey"
 
     val characterId: Int by lazy { arguments.getInt(ITEM_ID_KEY) }
     val characterDescription: String by lazy { arguments.getString(ITEM_DECRIPTION_KEY) }
-
-    override val logTag = CharacterFragment::class.java.simpleName
 
     override fun getLayout(): Int {
         return R.layout.fragment_character

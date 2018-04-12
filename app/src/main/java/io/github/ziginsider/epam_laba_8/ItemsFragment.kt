@@ -3,6 +3,7 @@ package io.github.ziginsider.epam_laba_8
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import io.github.ziginsider.epam_laba_8.adapter.ItemsAdapter
 import io.github.ziginsider.epam_laba_8.model.Character
 import io.github.ziginsider.epam_laba_8.model.MockCharacter
