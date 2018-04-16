@@ -35,10 +35,10 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
 
         clearFragmentBackStack()
         if (isPortrait()) {
-            setItemsFragmentPortrait(ItemsFragment())
+            showItemsFragmentPortrait(ItemsFragment())
         } else {
-            setItemsFragmentLandscape(ItemsFragment())
-            setCharacterFragmentLandscape(CharacterFragment
+            showItemsFragmentLandscape(ItemsFragment())
+            showCharacterFragmentLandscape(CharacterFragment
                     .newInstance(currentItemId, currentDecription))
         }
     }
@@ -47,21 +47,21 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
         supportFragmentManager.popBackStack()
     }
 
-    private fun setItemsFragmentPortrait(fragment: Fragment) {
+    private fun showItemsFragmentPortrait(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.activity_layout, fragment)
                 .commit()
     }
 
-    private fun setItemsFragmentLandscape(fragment: Fragment) {
+    private fun showItemsFragmentLandscape(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.items_frame, fragment)
                 .commit()
     }
 
-    private fun setCharacterFragmentPortrait(fragment: Fragment) {
+    private fun showCharacterFragmentPortrait(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .setCustomAnimations(
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
                 .commit()
     }
 
-    private fun setCharacterFragmentLandscape(fragment: Fragment) {
+    private fun showCharacterFragmentLandscape(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .setCustomAnimations(
@@ -92,8 +92,8 @@ class MainActivity : AppCompatActivity(), ItemsFragment.ItemClickEventListener {
         currentItemId = item.id
         currentDecription = item.description
         val fragment = CharacterFragment.newInstance(currentItemId, currentDecription)
-        if (isPortrait()) setCharacterFragmentPortrait(fragment)
-        else setCharacterFragmentLandscape(fragment)
+        if (isPortrait()) showCharacterFragmentPortrait(fragment)
+        else showCharacterFragmentLandscape(fragment)
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
