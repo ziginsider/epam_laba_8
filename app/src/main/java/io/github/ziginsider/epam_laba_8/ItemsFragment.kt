@@ -19,14 +19,15 @@ import kotlinx.android.synthetic.main.fragment_items.*
  * @since 2018-04-03
  */
 class ItemsFragment : BaseFragment() {
+    override val logTag = ItemsFragment::class.java.simpleName
+
     interface ItemClickEventListener {
         fun onFragmentItemClick(item: Character)
+
     }
-
     private var listener: ItemClickEventListener? = null
-    private var recyclerAdapter: ItemsAdapter? = null
 
-    override val logTag = ItemsFragment::class.java.simpleName
+    private var recyclerAdapter: ItemsAdapter? = null
 
     override fun getLayout(): Int {
         return R.layout.fragment_items
