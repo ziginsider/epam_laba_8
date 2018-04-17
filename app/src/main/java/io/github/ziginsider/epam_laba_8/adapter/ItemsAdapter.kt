@@ -10,7 +10,7 @@ import io.github.ziginsider.epam_laba_8.utils.inflate
 import kotlinx.android.synthetic.main.item_view.view.*
 
 /**
- * Adapter for list of characters [haracter]
+ * Adapter for list of characters [Character]
  *
  * @author Alex Kisel
  * @since 2018-04-03
