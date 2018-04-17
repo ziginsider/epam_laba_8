@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import io.github.ziginsider.epam_laba_8.utils.logi
 
 /**
- * <tt>Abstract</tt> Base Fragment that contains the base implementation for Fragment
+ * **Abstract** Base Fragment that contains the base implementation for Fragment
  *
  * @author Alex Kisel
  * @since 2018-04-03
@@ -17,7 +17,7 @@ import io.github.ziginsider.epam_laba_8.utils.logi
 abstract class BaseFragment : Fragment() {
 
     /**
-     * TAG for {@link utils#logi}
+     * TAG for [logi]
      */
     protected abstract val logTag: String
 

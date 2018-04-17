@@ -25,7 +25,7 @@ fun Activity.toast(message: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
 }
 
 /**
- * Extension for ViewGroup. Inflates view/
+ * Extension for ViewGroup. Inflates view
  *
  * @return Inflated View
  */
@@ -33,7 +33,7 @@ infix fun ViewGroup.inflate(layoutResId: Int): View =
         LayoutInflater.from(context).inflate(layoutResId, this, false)
 
 /**
- * Extension for Int. Converts <tt>Int</tt> to <tt>dp</dp>
+ * Extension for Int. Converts **Int**to **dp**
  */
 val Int.asDp: Int
     get() = (this * Resources.getSystem().displayMetrics.density).toInt()
@@ -41,7 +41,7 @@ val Int.asDp: Int
 /**
  * Extension for Activity. Gets current device orientation
  *
- * @return <tt>true</tt> if device has portrait orientation
+ * @return **true**if device has portrait orientation
  */
 fun Activity.isPortrait()
         = this.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT

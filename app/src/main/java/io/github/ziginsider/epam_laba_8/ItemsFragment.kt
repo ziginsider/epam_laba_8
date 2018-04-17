@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_items.*
 /**
  * Implements First Fragment that contains a list which allows to chose second Fragment
  *
- * <p>Declares interface <tt>ItemClickEventListener</tt> for getting
+ * Declares interface [ItemClickEventListener] for getting
  * touch to Activity
  *
  * @author Alex Kisel

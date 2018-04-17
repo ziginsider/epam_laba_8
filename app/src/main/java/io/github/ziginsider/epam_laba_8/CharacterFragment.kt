@@ -6,7 +6,8 @@ import android.widget.ImageView
 import android.widget.TextView
 
 /**
- * Implements Second Fragment that contains the selected {@link Character}
+ * Implements Second Fragment that contains the selected
+ * [io.github.ziginsider.epam_laba_8.model.Character]
  *
  * @author Alex Kisel
  * @since 2018-04-03

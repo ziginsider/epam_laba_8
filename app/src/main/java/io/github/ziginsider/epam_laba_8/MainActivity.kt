@@ -11,8 +11,8 @@ import io.github.ziginsider.epam_laba_8.utils.toast
  * Сontains two Fragments that have different positions on the screen in portrait
  * and landscape modes.
  *
- * <p>First Fragment {@link ItemsFragment} contains a list which allows to chose second Fragment
- * {@link CharacterFragment}. Implements {@link ItemsFragment#ItemClickEventListener} for getting
+ * First Fragment [ItemsFragment] contains a list which allows to chose second Fragment
+ * [CharacterFragment]. Implements [ItemsFragment.ItemClickEventListener] for getting
  * touch to Fragment. The transition of moving from first Fragment to another is animated
  *
  * @author Alex Kisel
