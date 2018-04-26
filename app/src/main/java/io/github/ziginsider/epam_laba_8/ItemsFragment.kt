@@ -23,8 +23,8 @@ class ItemsFragment : BaseFragment() {
 
     interface ItemClickEventListener {
         fun onFragmentItemClick(item: Character)
-
     }
+    
     private var listener: ItemClickEventListener? = null
 
     private var recyclerAdapter: ItemsAdapter? = null
